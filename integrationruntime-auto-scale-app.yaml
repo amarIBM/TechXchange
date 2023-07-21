@@ -1,0 +1,187 @@
+﻿apiVersion: appconnect.ibm.com/v1beta1
+kind: IntegrationRuntime
+metadata:
+  creationTimestamp: '2023-07-13T13:35:14Z'
+  generation: 8
+  labels:
+    appconnect.ibm.com/designerapiflow: 'false'
+    appconnect.ibm.com/designereventflow: 'false'
+    appconnect.ibm.com/toolkitflow: 'true'
+  managedFields:
+    - apiVersion: appconnect.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          .: {}
+          'f:barURL': {}
+          'f:license':
+            .: {}
+            'f:accept': {}
+            'f:license': {}
+            'f:use': {}
+          'f:logFormat': {}
+          'f:template':
+            .: {}
+            'f:spec':
+              .: {}
+              'f:containers': {}
+          'f:version': {}
+      manager: unknown
+      operation: Update
+      time: '2023-07-13T13:35:14Z'
+    - apiVersion: appconnect.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:configurations': {}
+      manager: manager
+      operation: Update
+      time: '2023-07-13T13:35:20Z'
+    - apiVersion: appconnect.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:phase': {}
+          'f:endpoints': {}
+          'f:supportsTraceCustomResource': {}
+          'f:conditions': {}
+          .: {}
+          'f:versions':
+            .: {}
+            'f:available':
+              .: {}
+              'f:channels': {}
+              'f:versions': {}
+            'f:reconciled': {}
+          'f:replicas': {}
+          'f:traceEnabled': {}
+          'f:availableReplicas': {}
+          'f:customImages': {}
+          'f:labelSelector': {}
+      manager: manager
+      operation: Update
+      subresource: status
+      time: '2023-07-19T23:56:11Z'
+  name: auto-scale-app
+  namespace: cp4i
+  resourceVersion: '13442316'
+  uid: b1057389-d9cc-4d21-97d2-fd2dfa8882eb
+spec:
+  barURL:
+    - >-
+      https://ace-dashboard-dash.cp4i:3443/v1/directories/AutoScaleApp?955790c2-2235-48e9-a14f-9a97d2c27737
+  configurations:
+    - auto-scale-app-ir-adminssl
+  license:
+    accept: true
+    license: L-AWVV-J3WMK6
+    use: CloudPakForIntegrationNonProductionFREE
+  logFormat: basic
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: runtime
+          resources:
+            requests:
+              cpu: 300m
+              memory: 368Mi
+  version: '12.0'
+status:
+  supportsTraceCustomResource: true
+  availableReplicas: 1
+  customImages: false
+  labelSelector: app.kubernetes.io/name=auto-scale-app
+  conditions:
+    - lastTransitionTime: '2023-07-13T13:35:30Z'
+      message: IntegrationRuntime is ready.
+      reason: Deployed
+      status: 'True'
+      type: Ready
+  phase: Ready
+  versions:
+    available:
+      channels:
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0 - June 2023
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-AWVV-J3WMK6
+              name: L-AWVV-J3WMK6
+          name: '12.0'
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0 - June 2023
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-AWVV-J3WMK6
+              name: L-AWVV-J3WMK6
+          name: 12.0.8
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-MJTK-WUU8HE
+              name: L-MJTK-WUU8HE
+          name: 12.0-lts
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-MJTK-WUU8HE
+              name: L-MJTK-WUU8HE
+          name: 12.0.8-lts
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.7.0 - March 2023
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-MSST-58UM6D
+              name: L-MSST-58UM6D
+          name: 12.0.7
+      versions:
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0 - June 2023
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-AWVV-J3WMK6
+              name: L-AWVV-J3WMK6
+          name: 12.0.8.0-r3
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-MJTK-WUU8HE
+              name: L-MJTK-WUU8HE
+          name: 12.0.8.0-r3-lts
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-MJTK-WUU8HE
+              name: L-MJTK-WUU8HE
+          name: 12.0.8.0-r2
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.8.0
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-MJTK-WUU8HE
+              name: L-MJTK-WUU8HE
+          name: 12.0.8.0-r1
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.7.0 - March 2023
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-MSST-58UM6D
+              name: L-MSST-58UM6D
+          name: 12.0.7.0-r5
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.7.0
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-APEH-CJUCNR
+              name: L-APEH-CJUCNR
+          name: 12.0.7.0-r4
+        - licenses:
+            - displayName: IBM App Connect Enterprise 12.0.7.0
+              link: >-
+                https://www.ibm.com/support/customer/csol/terms/?id=L-APEH-CJUCNR
+              name: L-APEH-CJUCNR
+          name: 12.0.7.0-r3
+    reconciled: 12.0.8.0-r3
+  replicas: 1
+  traceEnabled: {}
+  endpoints:
+    - name: http endpoint
+      type: api
+      uri: 'http://auto-scale-app-http-cp4i.apps.ocp.ibm.edu'
+    - name: https endpoint
+      type: api
+      uri: 'https://auto-scale-app-https-cp4i.apps.ocp.ibm.edu'

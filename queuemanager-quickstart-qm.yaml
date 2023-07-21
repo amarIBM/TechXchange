@@ -1,0 +1,687 @@
+﻿apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  annotations:
+    com.ibm.mq/write-defaults-spec: 'false'
+  resourceVersion: '8049350'
+  name: quickstart-qm
+  uid: f3756cef-16ba-433b-8fe6-500661ef13f4
+  creationTimestamp: '2023-07-12T14:53:33Z'
+  generation: 1
+  managedFields:
+    - apiVersion: mq.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:com.ibm.mq/write-defaults-spec': {}
+        'f:spec':
+          .: {}
+          'f:license':
+            .: {}
+            'f:accept': {}
+            'f:license': {}
+            'f:use': {}
+          'f:queueManager':
+            .: {}
+            'f:name': {}
+            'f:resources':
+              .: {}
+              'f:limits':
+                .: {}
+                'f:cpu': {}
+              'f:requests':
+                .: {}
+                'f:cpu': {}
+            'f:storage':
+              .: {}
+              'f:defaultClass': {}
+              'f:queueManager':
+                .: {}
+                'f:class': {}
+                'f:type': {}
+          'f:template':
+            .: {}
+            'f:pod':
+              .: {}
+              'f:containers': {}
+          'f:version': {}
+          'f:web':
+            .: {}
+            'f:enabled': {}
+      manager: Mozilla
+      operation: Update
+      time: '2023-07-12T14:53:33Z'
+    - apiVersion: mq.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:finalizers':
+            .: {}
+            'v:"finalizer.queuemanagers.mq.ibm.com"': {}
+      manager: ibm-mq
+      operation: Update
+      time: '2023-07-12T14:53:33Z'
+    - apiVersion: mq.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:adminUiUrl': {}
+          'f:conditions': {}
+          'f:endpoints': {}
+          'f:name': {}
+          'f:phase': {}
+          'f:versions':
+            .: {}
+            'f:available':
+              .: {}
+              'f:channels': {}
+              'f:versions': {}
+            'f:reconciled': {}
+      manager: ibm-mq
+      operation: Update
+      subresource: status
+      time: '2023-07-12T14:54:29Z'
+  namespace: cp4i
+  finalizers:
+    - finalizer.queuemanagers.mq.ibm.com
+spec:
+  license:
+    accept: true
+    license: L-YBXJ-ADJNSM
+    use: NonProduction
+  queueManager:
+    name: QUICKSTART
+    resources:
+      limits:
+        cpu: 500m
+      requests:
+        cpu: 500m
+    storage:
+      defaultClass: nfs-client
+      queueManager:
+        class: nfs-client
+        type: persistent-claim
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+  version: 9.2.4.0-r1
+  web:
+    enabled: true
+status:
+  adminUiUrl: >-
+    https://cpd-cp4i.apps.ocp.ibm.edu/integration/messaging/cp4i/quickstart-qm-ibm-mq
+  conditions:
+    - lastTransitionTime: '2023-07-12T14:53:33Z'
+      message: >-
+        The specified spec.version 9.2.4.0-r1 is deprecated from MQ Operator
+        2.1.0. It might no longer be reconciled by future versions of the
+        operator. For more information of operator and resource version
+        compatibility see https://ibm.biz/BdfkU8.
+      reason: DeprecatedVersion
+      status: 'True'
+      type: Warning
+  endpoints:
+    - name: ui
+      type: UI
+      uri: >-
+        https://cpd-cp4i.apps.ocp.ibm.edu/integration/messaging/cp4i/quickstart-qm-ibm-mq
+  name: QUICKSTART
+  phase: Running
+  versions:
+    available:
+      channels: []
+      versions:
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced 9.3 – 05/2023 and IBM MQ Advanced for
+                Non-Production Environment 9.3 – 05/2023
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-AMRD-XH6P3Q
+              name: L-AMRD-XH6P3Q
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3 - 05/2023
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-AXAF-JLZ53A
+              name: L-AXAF-JLZ53A
+          name: 9.3.3.0-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced 9.3 – 02/2023 and IBM MQ Advanced for
+                Non-Production Environment 9.3 – 02/2023
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-UPFX-8MW49T
+              name: L-UPFX-8MW49T
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.2.1-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced 9.3 – 02/2023 and IBM MQ Advanced for
+                Non-Production Environment 9.3 – 02/2023
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-UPFX-8MW49T
+              name: L-UPFX-8MW49T
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.2.1-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced 9.3 – 02/2023 and IBM MQ Advanced for
+                Non-Production Environment 9.3 – 02/2023
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-UPFX-8MW49T
+              name: L-UPFX-8MW49T
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.2.0-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced 9.3 – 02/2023 and IBM MQ Advanced for
+                Non-Production Environment 9.3 – 02/2023
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-UPFX-8MW49T
+              name: L-UPFX-8MW49T
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.2.0-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.1.1-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.1.0-r3
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.1.0-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.1.0-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.5-r3
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.5-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.5-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.4-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.4-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.3-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.1-r4
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.1-r3
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.1-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.1-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.0-r3
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.0-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEBE
+              name: L-APIG-CAUEBE
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-CAUEQC
+              name: L-APIG-CAUEQC
+          name: 9.3.0.0-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BZDDDY
+              name: L-APIG-BZDDDY
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) V9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BYHCL7
+              name: L-APIG-BYHCL7
+          name: 9.2.5.0-r3
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BZDDDY
+              name: L-APIG-BZDDDY
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) V9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BYHCL7
+              name: L-APIG-BYHCL7
+          name: 9.2.5.0-r2
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BZDDDY
+              name: L-APIG-BZDDDY
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) V9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BYHCL7
+              name: L-APIG-BYHCL7
+          name: 9.2.5.0-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-YBXJ-ADJNSM
+              matchesCurrentType: true
+              name: L-YBXJ-ADJNSM
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.2.1
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-PYRA-849GYQ
+              name: L-PYRA-849GYQ
+            - displayName: >-
+                IBM MQ Advanced and IBM MQ Advanced for Non-Production
+                Environment 9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BZDDDY
+              name: L-APIG-BZDDDY
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) V9.2 - 07/2021
+              link: >-
+                https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-BYHCL7
+              name: L-APIG-BYHCL7
+          name: 9.2.4.0-r1
+    reconciled: 9.2.4.0-r1

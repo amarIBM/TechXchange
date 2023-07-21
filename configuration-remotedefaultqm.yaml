@@ -1,0 +1,34 @@
+﻿apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  creationTimestamp: '2023-07-20T00:13:42Z'
+  generation: 1
+  labels:
+    bcdr-candidate: t
+    component-name: appconnect
+  managedFields:
+    - apiVersion: appconnect.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:bcdr-candidate': {}
+            'f:component-name': {}
+        'f:spec':
+          .: {}
+          'f:contents': {}
+          'f:type': {}
+          'f:version': {}
+      manager: unknown
+      operation: Update
+      time: '2023-07-20T00:13:42Z'
+  name: remotedefaultqm
+  namespace: cp4i
+  resourceVersion: '13451592'
+  uid: 14963907-334e-4e28-800b-2cc4bcbc4af9
+spec:
+  contents: >-
+    cmVtb3RlRGVmYXVsdFF1ZXVlTWFuYWdlcjogJ3tteVBvbGljeVByb2plY3R9Ok1RRW5kcG9pbnQnIAo=
+  type: serverconf
+  version: 12.0.8.0-r3
