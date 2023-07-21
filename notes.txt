@@ -1,0 +1,27 @@
+https://console-openshift-console.apps.ocp.ibm.edu/dashboards
+https://cpd-cp4i.apps.ocp.ibm.edu/zen/#/homepage
+
+/home/ibmuser/Documents/IIB10NODE_backup.zip
+
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta2
+metadata:
+  name: ace-auto-scale
+  namespace: cp4i
+spec:
+  scaleTargetRef:
+    kind: IntegrationRuntime
+    name: auto-scale-app
+    apiVersion: appconnect.ibm.com/v1beta1
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50
+
+   
+
