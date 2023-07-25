@@ -23,5 +23,11 @@ spec:
           type: Utilization
           averageUtilization: 50
 
-   
+   =====================
+
+remoteDefaultQueueManager: '{myPolicyProject}:MQEndpoint' 
+StartupScripts:
+  EncodedHostScript:
+    command: 'export ENCODED_VAR=`echo $HOSTNAME | sha1sum | tr -d "-" | tr -d " "` && echo UserVariables: && /bin/echo -e "  script-encoded-hostname: \\x27$ENCODED_VAR\\x27"'
+    readVariablesFromOutput: true
 
